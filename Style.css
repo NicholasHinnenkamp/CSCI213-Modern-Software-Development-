@@ -1,0 +1,15 @@
+﻿body {
+    background-color: aliceblue;
+    text-align: left;
+}
+
+header{
+    font-style: normal;
+    background-color: azure;
+    font-size: 40px;
+}
+
+footer{
+    font-style: italic;
+    background-color: azure;
+}

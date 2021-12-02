@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Karate" Class="KarateDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Karate.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="KarateConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Days" Member="Days">
+    <Type Name="Day">
+      <Column Name="num" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Instructors" Member="Instructors">
+    <Type Name="Instructor">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Members" Member="Members">
+    <Type Name="Member">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Date_Joined" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Member_Payment" Member="Payments" ThisKey="ID" OtherKey="Member_Id" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payments" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Member_Id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Member_Payment" Member="Member" ThisKey="Member_Id" OtherKey="ID" Type="Member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedule" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Day" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Instructor_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

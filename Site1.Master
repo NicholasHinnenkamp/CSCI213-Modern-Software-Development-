@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignment5.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet"type ="text/css"href="style.css">
+</head>
+    <header> 
+        <asp:Image ID="Image1" runat="server" Height="94px" ImageUrl="~/Image/PIO.jpg" Width="92px" />
+        &nbsp;&nbsp;&nbsp; Karate Club &nbsp;&nbsp;&nbsp;
+
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/members.aspx">Members</asp:HyperLink>&nbsp;
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/payments.aspx">Payments</asp:HyperLink>&nbsp;
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/schedule.aspx">Schedule</asp:HyperLink>&nbsp;
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/instructortime.aspx">Instructor Time</asp:HyperLink>
+
+    </header>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+                <p>
+                </p>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+    <footer>
+
+        Karate Club at Springfield Some State</footer>
+</html>
